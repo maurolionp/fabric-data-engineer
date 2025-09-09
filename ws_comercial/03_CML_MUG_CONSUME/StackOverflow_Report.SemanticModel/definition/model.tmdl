@@ -1,0 +1,33 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Staging Group'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["DimProduct","DimProductCategory","DimProductSubcategory","DimGeography","DimCustomer","business Dim_Date","business Dim_Posts","business Dim_User","business Fact_Interaction"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.145.1602.0 (25.07)+10647c9fa319b5e39936cdb21328038c371d1fe4
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_b1620a0e-d17b-4252-8acd-e2cadbf36502
+ref table 'business Dim_Date'
+ref table LocalDateTable_128c4a3d-8beb-40c1-945f-1acd45d19b73
+ref table 'business Dim_Posts'
+ref table LocalDateTable_9c4128ff-72e2-4d27-9e55-92af8149f1d8
+ref table LocalDateTable_346b1723-45b4-4661-9ac6-d971edc6acc1
+ref table 'business Dim_User'
+ref table LocalDateTable_e3bfd837-587b-4d65-86c2-351df5be363e
+ref table 'business Fact_Interaction'
+ref table LocalDateTable_9468bc91-a7da-4232-bdf5-0c0089de814f
+
+ref cultureInfo en-US
+

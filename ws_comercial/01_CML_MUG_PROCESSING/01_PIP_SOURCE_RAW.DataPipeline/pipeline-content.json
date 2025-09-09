@@ -1,0 +1,641 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            },
+            "storeSettings": {
+              "type": "AzureBlobFSReadSettings",
+              "recursive": true,
+              "enablePartitionDiscovery": false
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "AzureBlobFSLocation",
+                  "fileSystem": "data",
+                  "folderPath": "posts/2008-01-01",
+                  "fileName": "sk_posts_200801.csv"
+                },
+                "columnDelimiter": "|",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "40e3dcdc-b24d-4b62-8a6a-fec394600eb1"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "raw",
+                "table": "posts"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "L01_TDV_MUG",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "8da9b809-516e-946d-4586-fba6eb84d8bc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Id",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "AcceptedAnswerId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "AcceptedAnswerId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "AnswerCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "AnswerCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ClosedDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ClosedDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CommentCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CommentCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CommunityOwnedDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CommunityOwnedDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CreationDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CreationDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "FavoriteCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "FavoriteCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastActivityDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastActivityDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastEditDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastEditDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastEditorUserId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastEditorUserId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "OwnerUserId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "OwnerUserId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ParentId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ParentId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PostTypeId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "PostTypeId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Score",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Score",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Tags",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Tags",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ViewCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ViewCount",
+                  "physicalType": "string"
+                }
+              }
+            ]
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Load Posts 01",
+        "dependsOn": [
+          {
+            "activity": "Copy data1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            },
+            "storeSettings": {
+              "type": "AzureBlobFSReadSettings",
+              "recursive": true,
+              "enablePartitionDiscovery": false
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "AzureBlobFSLocation",
+                  "fileSystem": "data",
+                  "folderPath": "posts/2009-01-01",
+                  "fileName": "sk_posts_200901.csv"
+                },
+                "columnDelimiter": "|",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "40e3dcdc-b24d-4b62-8a6a-fec394600eb1"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "raw",
+                "table": "posts"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "L01_TDV_MUG",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "8da9b809-516e-946d-4586-fba6eb84d8bc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Id",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "AcceptedAnswerId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "AcceptedAnswerId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "AnswerCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "AnswerCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ClosedDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ClosedDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CommentCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CommentCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CommunityOwnedDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CommunityOwnedDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CreationDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CreationDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "FavoriteCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "FavoriteCount",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastActivityDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastActivityDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastEditDate",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastEditDate",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastEditorUserId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "LastEditorUserId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "OwnerUserId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "OwnerUserId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ParentId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ParentId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PostTypeId",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "PostTypeId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Score",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Score",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Tags",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Tags",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ViewCount",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "ViewCount",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Load Posts 02",
+        "dependsOn": [
+          {
+            "activity": "Load Posts 01",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            },
+            "storeSettings": {
+              "type": "FileServerReadSettings",
+              "recursive": true,
+              "enablePartitionDiscovery": false
+            },
+            "datasetSettings": {
+              "type": "DelimitedText",
+              "typeProperties": {
+                "location": {
+                  "type": "FileServerLocation",
+                  "folderPath": "sharedknow/badges",
+                  "fileName": "sk_badges.csv"
+                },
+                "columnDelimiter": "|",
+                "quoteChar": "\"",
+                "escapeChar": "\\",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "ab729e44-1a97-4d6c-8f6f-22f21594a128"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "formatSettings": {
+              "type": "ParquetWriteSettings",
+              "enableVertiParquet": true
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "Parquet",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "sharedknow",
+                  "fileName": "badges.parquet"
+                },
+                "compressionCodec": "snappy"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "L01_TDV_MUG",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "8da9b809-516e-946d-4586-fba6eb84d8bc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+expression DimProduct =
+		let
+		    Source = Sql.Databases("localhost"),
+		    AdventureWorksDW2019 = Source{[Name="AdventureWorksDW2019"]}[Data],
+		    dbo_DimProduct = AdventureWorksDW2019{[Schema="dbo",Item="DimProduct"]}[Data]
+		in
+		    dbo_DimProduct
+	lineageTag: 256048df-1792-4bf8-b13f-68f1eb0b2a3f
+	queryGroup: 'Staging Group'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DimProductCategory =
+		let
+		    Source = Sql.Databases("localhost"),
+		    AdventureWorksDW2019 = Source{[Name="AdventureWorksDW2019"]}[Data],
+		    dbo_DimProductCategory = AdventureWorksDW2019{[Schema="dbo",Item="DimProductCategory"]}[Data]
+		in
+		    dbo_DimProductCategory
+	lineageTag: 9df22d5c-9006-43d8-9678-8cd98bfc7c34
+	queryGroup: 'Staging Group'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DimProductSubcategory =
+		let
+		    Source = Sql.Databases("localhost"),
+		    AdventureWorksDW2019 = Source{[Name="AdventureWorksDW2019"]}[Data],
+		    dbo_DimProductSubcategory = AdventureWorksDW2019{[Schema="dbo",Item="DimProductSubcategory"]}[Data]
+		in
+		    dbo_DimProductSubcategory
+	lineageTag: f026e6a3-c71b-4ea9-9212-d196eac60cf3
+	queryGroup: 'Staging Group'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DimGeography =
+		let
+		    Source = Sql.Databases("localhost"),
+		    AdventureWorksDW2019 = Source{[Name="AdventureWorksDW2019"]}[Data],
+		    dbo_DimGeography = AdventureWorksDW2019{[Schema="dbo",Item="DimGeography"]}[Data]
+		in
+		    dbo_DimGeography
+	lineageTag: 23973f5b-b8bf-402d-85bc-7f8fd6bfc63f
+	queryGroup: 'Staging Group'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DimCustomer =
+		let
+		    Source = Sql.Databases("localhost"),
+		    AdventureWorksDW2019 = Source{[Name="AdventureWorksDW2019"]}[Data],
+		    dbo_DimCustomer = AdventureWorksDW2019{[Schema="dbo",Item="DimCustomer"]}[Data]
+		in
+		    dbo_DimCustomer
+	lineageTag: ccdbb350-b9e8-429e-852c-dc94a3fe8f3e
+	queryGroup: 'Staging Group'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

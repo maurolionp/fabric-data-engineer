@@ -1,0 +1,516 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Dim_Date",
+        "sourceLineageTag": "[business].[Dim_Date]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DateAlternativeKey",
+            "dataType": "dateTime",
+            "sourceColumn": "DateAlternativeKey",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "DateAlternativeKey",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DateString",
+            "dataType": "string",
+            "sourceColumn": "DateString",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DateString",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DateYear",
+            "dataType": "string",
+            "sourceColumn": "DateYear",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DateYear",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Dim_Date",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "business"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Posts",
+        "sourceLineageTag": "[business].[Dim_Posts]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UserId",
+            "dataType": "int64",
+            "sourceColumn": "UserId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "UserId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "AnswerCount",
+            "dataType": "int64",
+            "sourceColumn": "AnswerCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "AnswerCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CommentCount",
+            "dataType": "int64",
+            "sourceColumn": "CommentCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "CommentCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FavoriteCount",
+            "dataType": "int64",
+            "sourceColumn": "FavoriteCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FavoriteCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Type",
+            "dataType": "string",
+            "sourceColumn": "Type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ViewCount",
+            "dataType": "int64",
+            "sourceColumn": "ViewCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ViewCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Score",
+            "dataType": "int64",
+            "sourceColumn": "Score",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Score",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CreationDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "CreationDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ClosedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ClosedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "ClosedDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Dim_Posts",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "business"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Dim_User",
+        "sourceLineageTag": "[business].[Dim_User]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DownVotes",
+            "dataType": "int64",
+            "sourceColumn": "DownVotes",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DownVotes",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UpVotes",
+            "dataType": "int64",
+            "sourceColumn": "UpVotes",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "UpVotes",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ViewCount",
+            "dataType": "int64",
+            "sourceColumn": "ViewCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ViewCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ReputationScore",
+            "dataType": "int64",
+            "sourceColumn": "ReputationScore",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ReputationScore",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Email",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CreationDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "CreationDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Dim_User",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "business"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Fact_Interaction",
+        "sourceLineageTag": "[business].[Fact_Interaction]",
+        "columns": [
+          {
+            "name": "UserId",
+            "dataType": "int64",
+            "sourceColumn": "UserId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "UserId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PostId",
+            "dataType": "int64",
+            "sourceColumn": "PostId",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "PostId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "InteractionDate",
+            "dataType": "dateTime",
+            "sourceColumn": "InteractionDate",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "InteractionDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Score",
+            "dataType": "int64",
+            "sourceColumn": "Score",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Score",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreateDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "CreateDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Fact_Interaction",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "business"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

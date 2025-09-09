@@ -1,0 +1,55 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "02_PIP_RAW_BUSINESS",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "raw comments": {
+      "queryId": "5a87dfa6-aa55-4154-8205-58c699b5b89b",
+      "queryName": "raw comments"
+    },
+    "raw posts": {
+      "queryId": "f53e02dd-294e-46ba-944b-f265f8576b37",
+      "queryName": "raw posts"
+    },
+    "raw posttypes": {
+      "queryId": "76452b85-bb6c-48b1-9d71-5f0d4fd5bf9b",
+      "queryName": "raw posttypes"
+    },
+    "raw users": {
+      "queryId": "6c57d67f-a999-4196-a95c-27c4d248e919",
+      "queryName": "raw users"
+    },
+    "raw users_DataDestination": {
+      "queryId": "b4331d36-4a5f-4f40-8436-556e060cda14",
+      "queryName": "raw users_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "raw posts_DataDestination": {
+      "queryId": "2c6eeda6-ecc7-43e2-94b6-18c32d789aa0",
+      "queryName": "raw posts_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "raw comments_DataDestination": {
+      "queryId": "caf0cf45-c866-4c6c-baa5-10d3b56709af",
+      "queryName": "raw comments_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"1e932ab3-68a6-4fdd-b1c7-49abcd5340f1\",\"DatasourceId\":\"304a5b31-33f9-4425-9473-d252ca670468\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"1e932ab3-68a6-4fdd-b1c7-49abcd5340f1\",\"DatasourceId\":\"6de8827c-fec5-4a07-8153-7ea5a67057cc\"}"
+    }
+  ]
+}

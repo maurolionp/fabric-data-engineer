@@ -1,0 +1,88 @@
+table 'business Dim_User'
+	lineageTag: 058b51c5-6e17-48a6-a035-53065a502a8a
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: e1ce46a3-9f5a-4a94-813f-f9309838a025
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DownVotes
+		dataType: int64
+		formatString: 0
+		lineageTag: 85c23b5c-9b4d-43c4-a46d-6aabfdc9bf63
+		summarizeBy: sum
+		sourceColumn: DownVotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpVotes
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dd0fbb8-b20a-48e0-a539-135e576b5754
+		summarizeBy: sum
+		sourceColumn: UpVotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ViewCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 53774826-2bda-4aad-a4bf-e4dd37566910
+		summarizeBy: sum
+		sourceColumn: ViewCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReputationScore
+		dataType: int64
+		formatString: 0
+		lineageTag: 64b04505-8b36-4e79-9846-b2712347bfdc
+		summarizeBy: sum
+		sourceColumn: ReputationScore
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 327e7add-6d67-4603-8669-dd8cbedf42e9
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreationDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dc97411b-a009-4a90-9ff3-ce1f8c631ac7
+		summarizeBy: none
+		sourceColumn: CreationDate
+
+		variation Variation
+			isDefault
+			relationship: 51fabbfb-5a48-41e2-b2b3-7ceecb0a3b0f
+			defaultHierarchy: LocalDateTable_e3bfd837-587b-4d65-86c2-351df5be363e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateYear = YEAR('business Dim_User' [CreationDate])
+		formatString: 0
+		lineageTag: c0f389e7-49eb-4116-8b6e-6742844ff17c
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'business Dim_User' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("f7onbauqqv7uzabncqzmqzad2m-cufs6efjexbelkww4ry5nsnasy.datawarehouse.fabric.microsoft.com", "L02_BDV_MUG"),
+				    business_Dim_User = Source{[Schema="business",Item="Dim_User"]}[Data]
+				in
+				    business_Dim_User
+

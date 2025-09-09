@@ -1,0 +1,93 @@
+{
+  "config": "{\"version\":\"5.40\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY22SU11\",\"type\":2,\"version\":\"5.40\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSectione829eedd482803c55c4d",
+      "config": "{}",
+      "name": "Pod"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY22SU11",
+            "path": "BaseThemes/CY22SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"201L\"}}}}}],\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]}}",
+      "displayName": "Inicio",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectione829eedd482803c55c4d",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0f91ef60a000b826d050\",\"layouts\":[{\"id\":0,\"position\":{\"x\":776.7463911087139,\"y\":100.00028388525358,\"z\":4000,\"width\":353.48937559438474,\"height\":126.74454585456557,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"CountNonNull(business Fact_Interaction.PostId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"business Fact_Interaction\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"PostId\"}},\"Function\":2},\"Name\":\"CountNonNull(business Fact_Interaction.PostId)\",\"NativeReferenceName\":\"Count of PostId1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"PostId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 126.74,
+          "width": 353.49,
+          "x": 776.75,
+          "y": 100.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"7cfc1cf737443815a176\",\"layouts\":[{\"id\":0,\"position\":{\"x\":776.7463911087139,\"y\":226.74482973981915,\"width\":353.4893755943847,\"height\":166.2795418092007,\"z\":5000,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"qnaVisual\",\"drillFilterOtherVisuals\":true}}",
+          "height": 166.28,
+          "width": 353.49,
+          "x": 776.75,
+          "y": 226.74,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"88666c905a98ab53ca23\",\"layouts\":[{\"id\":0,\"position\":{\"x\":50.00014194262679,\"y\":108.13984187591375,\"z\":1000,\"width\":615.118025294176,\"height\":284.8845296731061,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(business Dim_Posts.Id)\"}],\"Category\":[{\"queryRef\":\"business Dim_Posts.DataYear\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"business Dim_Posts\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Id\"}},\"Function\":5},\"Name\":\"CountNonNull(business Dim_Posts.Id)\",\"NativeReferenceName\":\"Count of Id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"DataYear\"},\"Name\":\"business Dim_Posts.DataYear\",\"NativeReferenceName\":\"DataYear\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Id\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Tipo de interacción'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Participación por tipo de interacción'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 284.88,
+          "width": 615.12,
+          "x": 50.00,
+          "y": 108.14,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8bd7552e31a26cca2d60\",\"layouts\":[{\"id\":0,\"position\":{\"x\":50.00014194262679,\"y\":413.9546635250032,\"z\":2000,\"width\":655.815815247477,\"height\":284.8845296731061,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(business Dim_User.ReputationScore)\"}],\"Category\":[{\"queryRef\":\"business Dim_User.CreationDate.Variation.Date Hierarchy.Year\",\"active\":true},{\"queryRef\":\"business Dim_User.CreationDate.Variation.Date Hierarchy.Month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"business Dim_User\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"ReputationScore\"}},\"Function\":2},\"Name\":\"Sum(business Dim_User.ReputationScore)\",\"NativeReferenceName\":\"Count of ReputationScore\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Name\":\"Variation\",\"Property\":\"CreationDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"business Dim_User.CreationDate.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"CreationDate Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Name\":\"Variation\",\"Property\":\"CreationDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"business Dim_User.CreationDate.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"CreationDate Month\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0.6}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Reputación de interacción por periodo'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 284.88,
+          "width": 655.82,
+          "x": 50.00,
+          "y": 413.95,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a348eff50c23c00ed372\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":0,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d986c37cd4726224a16b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":50.00014194262679,\"y\":39.534995954635136,\"z\":3000,\"width\":615.118025294176,\"height\":60.46528793061844,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Reporte de Stack Overflow v10\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"20pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 60.47,
+          "width": 615.12,
+          "x": 50.00,
+          "y": 39.53,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

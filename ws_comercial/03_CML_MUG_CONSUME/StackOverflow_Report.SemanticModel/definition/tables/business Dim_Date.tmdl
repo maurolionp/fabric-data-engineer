@@ -1,0 +1,53 @@
+table 'business Dim_Date'
+	lineageTag: 7c6b3fa0-839f-4bf0-ba1f-7bc51a3832c8
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c0824c1-8746-4154-b7d4-5e8b97fd6de6
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateAlternativeKey
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c56bdcff-240c-4c7d-b4ff-f3304680fbac
+		summarizeBy: none
+		sourceColumn: DateAlternativeKey
+
+		variation Variation
+			isDefault
+			relationship: be26f6f1-a800-4dd9-ba3f-bd948a7897e7
+			defaultHierarchy: LocalDateTable_128c4a3d-8beb-40c1-945f-1acd45d19b73.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateString
+		dataType: string
+		lineageTag: a7c6d489-c918-4a07-9f86-ca41cba77384
+		summarizeBy: none
+		sourceColumn: DateString
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateYear
+		dataType: string
+		lineageTag: d5ab0e8c-c6e6-407e-8cfc-d9df5ef7750c
+		summarizeBy: none
+		sourceColumn: DateYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'business Dim_Date' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("f7onbauqqv7uzabncqzmqzad2m-cufs6efjexbelkww4ry5nsnasy.datawarehouse.fabric.microsoft.com", "L02_BDV_MUG"),
+				    business_Dim_Date = Source{[Schema="business",Item="Dim_Date"]}[Data]
+				in
+				    business_Dim_Date
+

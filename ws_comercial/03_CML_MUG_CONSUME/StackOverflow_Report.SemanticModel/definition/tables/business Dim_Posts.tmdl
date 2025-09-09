@@ -1,0 +1,118 @@
+table 'business Dim_Posts'
+	lineageTag: 9a12c3c0-ff14-435a-bb82-69879a015345
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: f857351c-ec51-4b4a-b720-80b03e110b2c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: int64
+		formatString: 0
+		lineageTag: f7ba9f08-d27a-4aa0-83e5-9c2820cf54d8
+		summarizeBy: count
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnswerCount
+		dataType: int64
+		formatString: 0
+		lineageTag: e543b462-73ed-468c-a9bb-72a62d3a8cee
+		summarizeBy: sum
+		sourceColumn: AnswerCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommentCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d814d17-6d96-4cb4-a781-45c5117d352d
+		summarizeBy: sum
+		sourceColumn: CommentCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column FavoriteCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 83414744-4ed8-4026-af3d-39b82987bfc7
+		summarizeBy: sum
+		sourceColumn: FavoriteCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: e72b9a22-8873-4032-8e2e-f58a07a11bc2
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ViewCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 305ac8bd-3702-4059-a11c-417cfe8baee3
+		summarizeBy: sum
+		sourceColumn: ViewCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score
+		dataType: int64
+		formatString: 0
+		lineageTag: b14360d3-8797-4cce-8a6a-4b947a247b42
+		summarizeBy: sum
+		sourceColumn: Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreationDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b11725b0-8c6e-4c80-8ecb-a5f6da58ebb6
+		summarizeBy: none
+		sourceColumn: CreationDate
+
+		variation Variation
+			isDefault
+			relationship: ea4ab3a1-2aa5-48e8-9aec-e43792fd8bbc
+			defaultHierarchy: LocalDateTable_9c4128ff-72e2-4d27-9e55-92af8149f1d8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b96ba9e9-fc23-414f-99c7-b79100dbbba4
+		summarizeBy: none
+		sourceColumn: ClosedDate
+
+		variation Variation
+			isDefault
+			relationship: bb47ee9c-ad5d-415c-8808-c896dc388080
+			defaultHierarchy: LocalDateTable_346b1723-45b4-4661-9ac6-d971edc6acc1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataYear = YEAR('business Dim_Posts'[CreationDate])
+		formatString: 0
+		lineageTag: ff11ac79-ed97-4443-b7dd-ce0f8bf0840b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'business Dim_Posts' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("f7onbauqqv7uzabncqzmqzad2m-cufs6efjexbelkww4ry5nsnasy.datawarehouse.fabric.microsoft.com", "L02_BDV_MUG"),
+				    business_Dim_Posts = Source{[Schema="business",Item="Dim_Posts"]}[Data]
+				in
+				    business_Dim_Posts
+

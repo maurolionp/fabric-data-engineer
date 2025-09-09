@@ -1,0 +1,71 @@
+table 'business Fact_Interaction'
+	lineageTag: 8baa22d4-0e9b-45da-81dc-f8fa00744c72
+
+	column UserId
+		dataType: int64
+		formatString: 0
+		lineageTag: 121b4912-b1f4-4316-978b-da2505181315
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostId
+		dataType: int64
+		formatString: 0
+		lineageTag: 40e3148b-f26c-4416-9ab6-66641d402c88
+		summarizeBy: none
+		sourceColumn: PostId
+
+		annotation SummarizationSetBy = Automatic
+
+	column InteractionDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9d792488-62e7-4f7f-a918-fa507784a4dc
+		summarizeBy: none
+		sourceColumn: InteractionDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Score
+		dataType: int64
+		formatString: 0
+		lineageTag: a6a8214f-b373-456c-aa81-f17d7a30e638
+		summarizeBy: sum
+		sourceColumn: Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreateDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 93c236c0-c14c-4b4f-bca8-ec85396aca7c
+		summarizeBy: none
+		sourceColumn: CreateDate
+
+		variation Variation
+			isDefault
+			relationship: 5d7e88c4-98a5-467c-9099-47d5f98b891b
+			defaultHierarchy: LocalDateTable_9468bc91-a7da-4232-bdf5-0c0089de814f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateYear = YEAR(LASTDATE('business Fact_Interaction'[InteractionDate]))
+		formatString: 0
+		lineageTag: ad160208-b8dd-4d43-af4c-b218c49a9985
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'business Fact_Interaction' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("f7onbauqqv7uzabncqzmqzad2m-cufs6efjexbelkww4ry5nsnasy.datawarehouse.fabric.microsoft.com", "L02_BDV_MUG"),
+				    business_Fact_Interaction = Source{[Schema="business",Item="Fact_Interaction"]}[Data]
+				in
+				    business_Fact_Interaction
+

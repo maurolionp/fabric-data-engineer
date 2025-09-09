@@ -1,0 +1,37 @@
+relationship be26f6f1-a800-4dd9-ba3f-bd948a7897e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'business Dim_Date'.DateAlternativeKey
+	toColumn: LocalDateTable_128c4a3d-8beb-40c1-945f-1acd45d19b73.Date
+
+relationship ea4ab3a1-2aa5-48e8-9aec-e43792fd8bbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'business Dim_Posts'.CreationDate
+	toColumn: LocalDateTable_9c4128ff-72e2-4d27-9e55-92af8149f1d8.Date
+
+relationship bb47ee9c-ad5d-415c-8808-c896dc388080
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'business Dim_Posts'.ClosedDate
+	toColumn: LocalDateTable_346b1723-45b4-4661-9ac6-d971edc6acc1.Date
+
+relationship 51fabbfb-5a48-41e2-b2b3-7ceecb0a3b0f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'business Dim_User'.CreationDate
+	toColumn: LocalDateTable_e3bfd837-587b-4d65-86c2-351df5be363e.Date
+
+relationship 5d7e88c4-98a5-467c-9099-47d5f98b891b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'business Fact_Interaction'.CreateDate
+	toColumn: LocalDateTable_9468bc91-a7da-4232-bdf5-0c0089de814f.Date
+
+relationship 67b45a1d-afdd-a1de-3aa6-5d25aa8686a6
+	fromColumn: 'business Fact_Interaction'.InteractionDate
+	toColumn: 'business Dim_Date'.DateAlternativeKey
+
+relationship 6b142627-73c3-3b2f-91f2-bc6603462371
+	fromColumn: 'business Fact_Interaction'.UserId
+	toColumn: 'business Dim_User'.Id
+
+relationship 1737aa69-7397-bfd9-02a6-3cdf2122b69c
+	fromColumn: 'business Fact_Interaction'.PostId
+	toColumn: 'business Dim_Posts'.Id
+
